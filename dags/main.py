@@ -7,8 +7,8 @@ def helloWorld():
 
 with DAG(
     dag_id="hello_world_dag",
-    start_date=datetime(2021, 1, 1),
-    schedule_interval="@hourly",
+    start_date=datetime(2025, 1, 15),
+    schedule_interval="* * * * *",
     catchup=False
 ) as dag:
 
