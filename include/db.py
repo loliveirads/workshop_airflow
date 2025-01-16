@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import os
 
 
-load_dotenv(dotenv_path="env")
+load_dotenv(dotenv_path=".env")
 
 # Carregar arquivo .env
 if not load_dotenv(dotenv_path=".env"):
