@@ -9,7 +9,7 @@ load_dotenv(dotenv_path=".env")
 
 # Carregar arquivo .env
 if not load_dotenv(dotenv_path=".env"):
-    raise FileNotFoundError("Arquivo .env.prod não encontrado ou não pôde ser carregado")
+    raise FileNotFoundError("Arquivo .env não encontrado ou não pôde ser carregado")
 
 db_user = os.getenv("POSTGRES_USER")
 db_password = os.getenv("POSTGRES_PASSWORD")
