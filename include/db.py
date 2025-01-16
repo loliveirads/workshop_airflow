@@ -3,10 +3,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 import os
+load_dotenv(dotenv_path="/usr/local/airflow/.env")
 
 # Carregar arquivo .env
 if not load_dotenv(dotenv_path=".env"):
-    raise FileNotFoundError("Arquivo .env não encontrado ou não pôde ser carregado")
+    raise FileNotFoundError("DEURUIM .env não encontrado ou não pôde ser carregado")
 
 # Variáveis de conexão
 db_user = os.getenv("POSTGRES_USER")
