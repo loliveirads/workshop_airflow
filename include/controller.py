@@ -23,11 +23,11 @@ def add_pokemon_to_db(pokemon_schema: PokemonSchema) -> Pokemon:
         existing_pokemon = db.query(Pokemon).filter(Pokemon.name == pokemon_schema.name).first()
         if existing_pokemon:
             print(f"Pokémon {pokemon_schema.name} já existe no banco de dados.")
-            return existing_pokemon
+            return {"name": existing_pokemon.name, "type": existing_pokemon.type}
         
         db_pokemon = Pokemon(name=pokemon_schema.name, type=pokemon_schema.type)
         db.add(db_pokemon)
         db.commit()
         db.refresh(db_pokemon)
-        return db_pokemon
+        return {"name": db_pokemon.name, "type": db_pokemon.type}  # JSON serializável
 

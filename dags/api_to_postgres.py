@@ -5,8 +5,8 @@ from datetime import datetime
 @dag(
     dag_id="api_postgres_pipeline",
     description="Pipeline para manipulação de dados via API e PostgreSQL",
-    schedule_interval="@daily",  # Executa diariamente
-    start_date=datetime(2023, 1, 1),
+    schedule_interval="*/5 * * * *",  # Executa a cada 5 minutos
+    start_date=datetime(2025, 1, 17),  # Substitua pela data de hoje
     catchup=False
 )
 def api_postgres():
